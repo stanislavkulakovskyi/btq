@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/extends.scss';
+
+.container {
+  @extend %container;
+  justify-content: start;
+
+  @include bp-tablet {
+    justify-content: center;
+  }
+}
+
+.animation {
+  width: 150%;
+  max-height: 260px;
+  object-fit: cover;
+
+  @include bp-tablet {
+    width: 100%;
+  }
+}
+
+.player {
+  color: $lava;
+  border: 1px solid $carbon;
+  margin-top: -5px;
+  background-color: $carbon;
+  width: 150%;
+
+  @include bp-tablet {
+    width: 100%;
+  }
+}
+
+.title {
+  @extend %title;
+  margin-bottom: 25px;
+
+  @include bp-tablet {
+    text-align: center;
+  }
+}
