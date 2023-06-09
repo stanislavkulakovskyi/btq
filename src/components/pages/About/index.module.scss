@@ -1,0 +1,63 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/extends.scss';
+
+.container {
+  @extend %container;
+  
+  @include bp-custom-up(640px) {
+    padding-left: 140px;
+    justify-content: flex-start;
+  }
+
+  @include bp-desktop {
+    padding-left: 60px;
+  }
+
+  @include bp-tablet {
+    height: 80vh;
+    padding: 40px;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.title {
+  @include font-fraunces-400;
+
+  color: $carbon;
+
+  font-size: 11rem;
+  margin-bottom: 40px;
+  position: relative;
+
+  z-index: 1;
+
+  @include bp-tablet {
+    font-size: 9rem;
+    margin-bottom: 40px;
+  }
+
+  @include bp-mobile {
+    font-size: 6rem;
+  }
+}
+
+.description {
+  @include font-orditron-400;
+  max-width: 400px;
+  font-size: 22px;
+  height: 100%;
+}
+
+.btn {
+  border: 1px solid $carbon;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  @include font-orditron-500;
+  cursor: pointer;
+}

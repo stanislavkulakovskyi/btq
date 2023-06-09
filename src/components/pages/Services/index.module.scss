@@ -1,0 +1,206 @@
+@import '../../../styles/extends.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.container {
+  @extend %container;
+
+  background-color: #dfdfdf95;
+}
+
+.slider_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  margin: 0 -60px;
+  
+  @include bp-tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -40px;
+    transform: translateY(0);
+    margin-top: 25px;
+  }
+}
+
+.page {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+
+  @include bp-tablet {
+    align-items: center;
+  }
+
+  @include bp-mobile {
+    align-items: normal;
+  }
+}
+
+.title {
+  @extend %title;
+
+  @include bp-tablet {
+    margin-left: -40px;
+  }
+
+  @include bp-custom-down(950px) {
+    margin-left: 0;
+  }
+}
+
+.services_list {
+  @include font-orditron-500;
+  font-size: 22px;
+  color: $carbon;
+  height: 40px;
+  max-width: max-content;
+
+  @include bp-tablet {
+    font-size: 18px;
+    min-height: 40px;
+    margin-left: -40px;
+  }
+
+  @include bp-custom-down(950px) {
+    margin-left: 0;
+  }
+
+  @include bp-mobile {
+    height: 70px;
+  }
+}
+
+.service_item {
+  animation: scale 0.3s;
+
+  &:nth-child(2n) {
+    color: $lava;
+    @include font-orditron-700;
+  }
+}
+
+.description {
+  @include font-orditron-400;
+  font-size: 22px;
+  margin: 0 30px 0 0;
+  width: 70%;
+
+  @include bp-mobile {
+    font-size: 22px;
+    margin: 0 0 36px 0;
+    width: 100%;
+  }
+}
+
+.description_box {
+  max-width: 600px;
+  background-color: $salt;
+  backdrop-filter: blur(40px);
+  padding: 40px;
+  border-radius: 10px;
+  bottom: 0;
+  // transform: translate(-55%, -210px);
+  z-index: 5;
+  align-self: center;
+  display: flex;
+  // position: absolute;
+  // bottom: 0;
+  // left: 16%;
+  justify-content: center;
+  align-items: center;
+
+  &:hover .svg_icon {
+    // width: 150px;
+    background: $carbon;
+
+    &:hover {
+      background-color: $lava;
+    }
+
+    &::before {
+      transition: all 0.3s;
+      filter: brightness(5);
+      // margin-right: 20px;
+      // transform: rotate(90deg);
+    }
+
+    &::after {
+      @include font-orditron-500;
+      font-size: 18px;
+      color: $salt;
+      content: 'REQUEST';
+      transform-origin: right;
+
+      animation: swipeLeft 0.3s;
+    }
+  }
+
+  @include bp-tablet {
+    width: 80%;
+    flex-direction: column;
+    transform: translate(0, -70px);
+  }
+
+  @include bp-custom-down(888px) {
+    transform: translate(0, -50px);
+  }
+
+  @include bp-mobile {
+    background-color: $carbon;
+    color: $salt;
+    margin-top: 10px;
+    z-index: 8;
+    transform: translateY(0);
+  }
+}
+
+.svg_icon {
+  @extend %transition01;
+  @extend %flexBetween;
+  @include square(70px);
+  
+  justify-content: center;
+  background-color: #d4d3d3;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid $fog;
+
+  overflow: hidden;
+
+  &::before {
+    content: url(../../../assets/icons/arrow.svg);
+    @extend %flexCenter;
+    @extend %transition01;
+    @include square(20px);
+
+    transform: translate(1px, 1px);
+
+    @include bp-tablet {
+      filter: brightness(5);
+      margin-right: 16px;
+      transform: rotate(90deg) scale(0.6) translate(0px, 0px);
+      transform-origin: center;
+    }
+  }
+
+  @include bp-tablet {
+    width: 190px;
+    background: $carbon;
+    margin-top: 30px;
+    // padding: 15px;
+
+    &::after {
+      @include font-orditron-500;
+      font-size: 18px;
+      color: $salt;
+      content: 'REQUEST';
+      transform-origin: right;
+      animation: swipeLeft 0.3s;
+    }
+  }
+}
