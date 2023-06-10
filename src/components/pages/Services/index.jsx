@@ -1,6 +1,7 @@
 import styles from './index.module.scss';
 import Slider from '../../blocks/Slider';
 import VideoModal from '../../blocks/VideoModal';
+import FormModal from '../../blocks/FormModal';
 import { useState, useEffect } from 'react';
 
 const servicesList = [
@@ -20,6 +21,10 @@ const Services = () => {
   const [selectedVideoUrl, setSelectedVideoUrl] = useState(null);
   const [visibleServices, setVisibleServices] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isFormOpened, setIsFormOpened] = useState(false);
+  const handleFormOpen = () => {
+    setIsFormOpened(true);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -77,7 +82,10 @@ const Services = () => {
         </p>
 
         <div className={styles.slider_container}>
-          <div className={styles.slider_box} style={{ clipPath: !isMobile ? 'url(#mask)' : null }}>
+          <div
+            className={styles.slider_box}
+            style={{ clipPath: !isMobile ? 'url(#mask)' : null }}
+          >
             <Slider openModal={openModal} />
             <svg height="0">
               <clipPath
@@ -99,19 +107,16 @@ const Services = () => {
           <div className={styles.description_box}>
             <p className={styles.description}>
               Belletriq create and deliver top-notch audio solutions for mixing,
-              mastering and production stages.<br/>
-              <br/>We provide services of sound
-              identity, SFX, scoring, licensing & sync.
+              mastering and production stages.
+              <br />
+              <br />
+              We provide services of sound identity, SFX, scoring, licensing &
+              sync.
             </p>
 
-            <a
-              className={styles.link}
-              href="www.google.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <button className={styles.link} onClick={handleFormOpen}>
               <div className={styles.svg_icon}></div>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -119,6 +124,8 @@ const Services = () => {
       {isModalOpen && (
         <VideoModal url={selectedVideoUrl} closeModal={closeModal} />
       )}
+
+      {isFormOpened && <FormModal />}
     </div>
   );
 };

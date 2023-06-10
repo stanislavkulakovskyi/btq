@@ -33,6 +33,8 @@
 
   z-index: 1;
 
+  pointer-events: none;
+
   @include bp-tablet {
     font-size: 9rem;
     margin-bottom: 40px;
@@ -48,16 +50,6 @@
   max-width: 400px;
   font-size: 22px;
   height: 100%;
-}
 
-.btn {
-  border: 1px solid $carbon;
-  border-radius: 5px;
-  background-color: transparent;
-  padding: 5px 10px;
-  position: absolute;
-  bottom: 0;
-  font-size: 2rem;
-  @include font-orditron-500;
-  cursor: pointer;
+  pointer-events: none;
 }

@@ -1,13 +1,7 @@
 import styles from './index.module.scss';
-import FormModal from '../../blocks/FormModal';
-import { useState } from 'react';
-
 
 const About = () => {
-  const [isFormOpened, setIsFormOpened] = useState(false);
-  const handleFormOpen = () => {
-    setIsFormOpened(true);
-  }
+
 
   return (
     <div className={styles.container}>
@@ -19,16 +13,6 @@ const About = () => {
           high-quality sound FX.
         </p>
       </div>
-
-      <button className={styles.btn} onClick={handleFormOpen}>
-        contact us
-      </button>
-
-      {isFormOpened &&
-        <FormModal />
-      }
-
-      
     </div>
   );
 };

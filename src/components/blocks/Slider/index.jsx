@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation } from 'swiper';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import 'swiper/scss';
 
 import styles from './index.module.scss';
@@ -18,24 +18,32 @@ const Slider = ({ openModal }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  const handleResize = useCallback(() => {
+    setWindowWidth(window.innerWidth);
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
-  const isTablet = windowWidth <= 1366;
+  const isTablet = useMemo(() => windowWidth <= 1366, [windowWidth]);
 
   useEffect(() => {
     const swiper = swiperRef.current.swiper;
 
     swiper.autoplay.start();
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovered(false);
   }, []);
 
   return (
@@ -49,7 +57,7 @@ const Slider = ({ openModal }) => {
           prevEl: `.${styles.btn_prev}`,
           nextEl: `.${styles.btn_next}`,
         }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         className={styles.swiper}
         loop={true}
       >
@@ -57,21 +65,21 @@ const Slider = ({ openModal }) => {
           <SwiperSlide
             className={styles.swiperslide}
             key={slide.id}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            {!isImageLoaded && <div className={styles.blur}>
-            </div>}
+            {!isImageLoaded && <div className={styles.blur}></div>}
             <img
-              src={isImageLoaded ? slide.image : slide.microImage}
+              src={slide.image}
               alt="slide"
               className={styles.slide}
+              loading="lazy"
               onLoad={() => setIsImageLoaded(true)}
             />
 
-            
+            <img src={slide.microImage} alt="preloader" className={StyleSheetList.blur} />
 
-            {isHovered && (
+            {(isHovered || isTablet) && (
               <button
                 className={styles.playButton}
                 onClick={() => openModal(slide.videoUrl)}

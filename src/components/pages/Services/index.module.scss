@@ -4,6 +4,7 @@
 
 .container {
   @extend %container;
+  // max-height: 100vh;
 
   background-color: #dfdfdf95;
 }
@@ -31,13 +32,19 @@
   display: flex;
   max-width: 100%;
   flex-direction: column;
+  min-height: 80vh;
 
   @include bp-tablet {
     align-items: center;
   }
 
+  @include bp-custom-down(600px) {
+    margin-bottom: 60px;
+  }
+
   @include bp-mobile {
     align-items: normal;
+    
   }
 }
 
@@ -88,12 +95,23 @@
   @include font-orditron-400;
   font-size: 22px;
   margin: 0 30px 0 0;
-  width: 70%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 350px;
+
+  @include bp-desktop {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+  @include bp-tablet {
+    width: 90%;
+  }
 
   @include bp-mobile {
     font-size: 22px;
     margin: 0 0 36px 0;
-    width: 100%;
+   
   }
 }
 
@@ -103,20 +121,34 @@
   backdrop-filter: blur(40px);
   padding: 40px;
   border-radius: 10px;
-  bottom: 0;
-  // transform: translate(-55%, -210px);
+  transform: translate(-25%, 170px);
   z-index: 5;
   align-self: center;
   display: flex;
-  // position: absolute;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s;
   // bottom: 0;
   // left: 16%;
   justify-content: center;
   align-items: center;
 
+  @include bp-desktop {
+    padding: 30px 40px;
+
+    &:hover {
+      max-width: 650px;
+
+      & .svg_icon {
+        width: 180px;
+        background: $carbon;
+      }
+    }
+  }
+
   &:hover .svg_icon {
-    // width: 150px;
-    background: $carbon;
+    // width: 180px;
+    // background: $carbon;
 
     &:hover {
       background-color: $lava;
@@ -125,8 +157,8 @@
     &::before {
       transition: all 0.3s;
       filter: brightness(5);
-      // margin-right: 20px;
-      // transform: rotate(90deg);
+      margin-right: 16px;
+      transform: rotate(90deg) scale(0.6);
     }
 
     &::after {
@@ -143,11 +175,12 @@
   @include bp-tablet {
     width: 80%;
     flex-direction: column;
-    transform: translate(0, -70px);
+    transform: translate(0, -80px);
+    position: relative;
   }
 
-  @include bp-custom-down(888px) {
-    transform: translate(0, -50px);
+  @include bp-custom-down(600px) {
+    transform: translate(0, 0);
   }
 
   @include bp-mobile {
@@ -155,7 +188,7 @@
     color: $salt;
     margin-top: 10px;
     z-index: 8;
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
 }
 
