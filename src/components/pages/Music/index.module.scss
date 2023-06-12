@@ -22,7 +22,7 @@
   object-fit: contain;
   background: #191919;
   z-index: 1;
-  position: relative;
+  
   border-radius: 5px;
 
   @include bp-tablet {
@@ -31,13 +31,17 @@
   }
 }
 
+.animation_container {
+  position: relative;
+}
+
 .player {
   color: $lava;
   border: 1px solid #191919;
   margin-top: -5px;
   background-color: #191919;
   // width: 150%;
-  position: relative;
+  // position: relative;
   z-index: 1;
   border-radius: 5px;
 
@@ -53,5 +57,17 @@
 
   @include bp-tablet {
     text-align: center;
+  }
+}
+
+.spotify {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  transform: scale(1.8);
+  // z-index: 20;
+
+  &:hover {
+    transform: scale(1.9);
   }
 }

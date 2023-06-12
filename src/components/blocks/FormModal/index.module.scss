@@ -5,23 +5,25 @@
 .form_backdrop {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background: #00000059;
-  backdrop-filter: blur(10px);
+  height: 100vh;
   z-index: 10;
+  // background: #000;
   top: 0;
   left: 0;
-  animation: scale 1s;
+  animation: scale 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 60px 40px 40px 40px;
-  width: 90%;
+  // width: 90%;
   border-radius: 10px;
   z-index: 10;
   background-color: $carbon;
@@ -29,14 +31,11 @@
   font-size: 20px;
   max-width: 600px;
   overflow: visible;
-  box-shadow: 0px 0px 125px black;
-
-  // max-height: 100%;
 
   @include bp-desktop {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
   }
 }
 

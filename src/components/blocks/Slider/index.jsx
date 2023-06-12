@@ -52,7 +52,7 @@ const Slider = ({ openModal }) => {
         ref={swiperRef}
         slidesPerView={isTablet ? 1 : 1.3}
         centeredSlides={false}
-        spaceBetween={50}
+        spaceBetween={100}
         navigation={{
           prevEl: `.${styles.btn_prev}`,
           nextEl: `.${styles.btn_next}`,
@@ -68,17 +68,12 @@ const Slider = ({ openModal }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            {!isImageLoaded && <div className={styles.blur}></div>}
             <img
-              src={slide.image}
+              src={isImageLoaded ? slide.image : slide.microImage}
               alt="slide"
               className={styles.slide}
-              loading="lazy"
               onLoad={() => setIsImageLoaded(true)}
             />
-
-            <img src={slide.microImage} alt="preloader" className={StyleSheetList.blur} />
-
             {(isHovered || isTablet) && (
               <button
                 className={styles.playButton}

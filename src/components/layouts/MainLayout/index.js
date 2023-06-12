@@ -1,4 +1,8 @@
-import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react';
+import React, {
+  useRef,
+  useEffect,
+  useState,
+} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Background } from './molecules';
 import { SideMenu } from '../../shared';
@@ -13,38 +17,33 @@ const MainLayout = ({ children }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isTablet = windowWidth <= 1366;
 
-  const handleResize = useCallback(() => {
-    setWindowWidth(window.innerWidth);
-  }, []);
-
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [handleResize]);
+  }, []);
 
   useEffect(() => {
     previousPathRef.current = location.pathname;
   }, [location.pathname]);
 
-  const currentRoute = useMemo(
-    () => PUBLIC_ROUTES.find((route) => route.path === location.pathname),
-    [location.pathname]
-  );
-  const previousRoute = 
-    () => PUBLIC_ROUTES.find((route) => route.path === previousPathRef.current);
-
+  const currentRoute = PUBLIC_ROUTES.find((route) => route.path === location.pathname);
+  const previousRoute = PUBLIC_ROUTES.find((route) => route.path === previousPathRef.current);
   const shouldAnimateUp =
     previousRoute && currentRoute && currentRoute.id < previousRoute.id;
 
   const animationProps = {
     className: styles.children,
     key: location.key,
-    initial: { y: shouldAnimateUp ? -1000 : 1000, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: shouldAnimateUp ? 1000 : -1000, opacity: 0 },
+    initial: { y: shouldAnimateUp ? -1000 : 1000 },
+    animate: { y: 0 },
+    exit: { y: shouldAnimateUp ? 1000 : -1000 },
     transition: { duration: 0.3 },
   };
 

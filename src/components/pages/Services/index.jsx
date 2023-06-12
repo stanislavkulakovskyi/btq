@@ -3,6 +3,7 @@ import Slider from '../../blocks/Slider';
 import VideoModal from '../../blocks/VideoModal';
 import FormModal from '../../blocks/FormModal';
 import { useState, useEffect } from 'react';
+import bgText from '../../../assets/images/bg_illustration.webp';
 
 const servicesList = [
   'SOUND DESIGN',
@@ -120,6 +121,12 @@ const Services = () => {
           </div>
         </div>
       </div>
+
+      <img
+        src={bgText}
+        alt="belletriq"
+        className={styles.bgIllustration}
+      />
 
       {isModalOpen && (
         <VideoModal url={selectedVideoUrl} closeModal={closeModal} />

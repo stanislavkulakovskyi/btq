@@ -1,6 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 import ArtistCard from '../../blocks/ArtistCard';
+import bgText from '../../../assets/images/bg_illustration.webp';
 
 import cutmylipsPhoto from '../../../assets/images/artists/cutmylips.webp';
 import inodiPhoto from '../../../assets/images/artists/inodi.webp';
@@ -19,12 +20,22 @@ import pas_micro from '../../../assets/images/artists/pashaopen_micro.webp';
 import artists from '../../../api/artists';
 
 const photos = [
-  cutmylipsPhoto, inodiPhoto, coldestPhoto, ayokidPhoto, palmoxPhoto, pashaOpenPhoto,
-]
+  cutmylipsPhoto,
+  inodiPhoto,
+  coldestPhoto,
+  ayokidPhoto,
+  palmoxPhoto,
+  pashaOpenPhoto,
+];
 
 const microPhotos = [
-  cml_micro, ino_micro, col_micro, ayo_micro, pal_micro, pas_micro
-]
+  cml_micro,
+  ino_micro,
+  col_micro,
+  ayo_micro,
+  pal_micro,
+  pas_micro,
+];
 
 const Artists = () => {
   return (
@@ -35,7 +46,7 @@ const Artists = () => {
           <div className={styles.list}>
             {artists.map((artist, i) => {
               return (
-                <ArtistCard 
+                <ArtistCard
                   name={artist.name}
                   photo={photos[i]}
                   link={artist.linktree}
@@ -45,10 +56,12 @@ const Artists = () => {
                   microPhoto={microPhotos[i]}
                   key={artist.id}
                 />
-              )
+              );
             })}
           </div>
         </div>
+
+        <img src={bgText} alt="belletriq" className={styles.bgIllustration} />
       </div>
     </>
   );

@@ -6,7 +6,7 @@
   @extend %container;
   // max-height: 100vh;
 
-  background-color: #dfdfdf95;
+  background-color: $salt;
 }
 
 .slider_container {
@@ -33,13 +33,14 @@
   max-width: 100%;
   flex-direction: column;
   min-height: 80vh;
+  margin-bottom: 60px;
 
   @include bp-tablet {
     align-items: center;
   }
 
   @include bp-custom-down(600px) {
-    margin-bottom: 60px;
+    // margin-bottom: 60px;
   }
 
   @include bp-mobile {
@@ -106,6 +107,7 @@
 
   @include bp-tablet {
     width: 90%;
+    margin-bottom: 30px;
   }
 
   @include bp-mobile {
@@ -118,7 +120,6 @@
 .description_box {
   max-width: 600px;
   background-color: $salt;
-  backdrop-filter: blur(40px);
   padding: 40px;
   border-radius: 10px;
   transform: translate(-25%, 170px);
@@ -128,10 +129,9 @@
   position: absolute;
   bottom: 0;
   transition: all 0.3s;
-  // bottom: 0;
-  // left: 16%;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.205);
 
   @include bp-desktop {
     padding: 30px 40px;
@@ -224,8 +224,6 @@
   @include bp-tablet {
     width: 190px;
     background: $carbon;
-    margin-top: 30px;
-    // padding: 15px;
 
     &::after {
       @include font-orditron-500;
@@ -236,4 +234,9 @@
       animation: swipeLeft 0.3s;
     }
   }
+}
+
+.bgIllustration {
+  @extend %bgIllustration;
+  z-index: 0;
 }
