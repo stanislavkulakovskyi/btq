@@ -23,9 +23,14 @@ const Services = () => {
   const [visibleServices, setVisibleServices] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isFormOpened, setIsFormOpened] = useState(false);
+  
   const handleFormOpen = () => {
     setIsFormOpened(true);
   };
+
+  const handleFormClose = () => {
+    setIsFormOpened(false);
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -126,13 +131,14 @@ const Services = () => {
         src={bgText}
         alt="belletriq"
         className={styles.bgIllustration}
+        loading='lazy'
       />
 
       {isModalOpen && (
         <VideoModal url={selectedVideoUrl} closeModal={closeModal} />
       )}
 
-      {isFormOpened && <FormModal />}
+      {isFormOpened && <FormModal onClose={handleFormClose} />}
     </div>
   );
 };

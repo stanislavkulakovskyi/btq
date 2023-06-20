@@ -4,11 +4,13 @@
   "homepage": "https://stanislavkulakovskyi.github.io/btq",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
+    "emailjs": "^4.0.2",
     "framer-motion": "^10.12.16",
     "lottie-react": "^2.4.0",
     "node-sass": "^7.0.3",

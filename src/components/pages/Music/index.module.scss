@@ -5,6 +5,7 @@
 .container {
   @extend %container;
   justify-content: start;
+  width: 100%;
 
   @include bp-tablet {
     justify-content: center;
@@ -58,6 +59,10 @@
   @include bp-tablet {
     text-align: center;
   }
+
+  @include bp-mobile {
+    text-align: start;
+  }
 }
 
 .spotify {
@@ -65,9 +70,11 @@
   top: 15px;
   right: 10px;
   transform: scale(1.8);
+  filter: brightness(0.8);
   // z-index: 20;
 
   &:hover {
     transform: scale(1.9);
+    filter: brightness(0.9);
   }
 }

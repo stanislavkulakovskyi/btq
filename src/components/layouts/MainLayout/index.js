@@ -1,8 +1,4 @@
-import React, {
-  useRef,
-  useEffect,
-  useState,
-} from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Background } from './molecules';
 import { SideMenu } from '../../shared';
@@ -13,45 +9,15 @@ import { PUBLIC_ROUTES } from '../../../utils/constants/routes';
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
-  const previousPathRef = useRef('');
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const isTablet = windowWidth <= 1366;
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    previousPathRef.current = location.pathname;
-  }, [location.pathname]);
-
-  const currentRoute = PUBLIC_ROUTES.find((route) => route.path === location.pathname);
-  const previousRoute = PUBLIC_ROUTES.find((route) => route.path === previousPathRef.current);
-  const shouldAnimateUp =
-    previousRoute && currentRoute && currentRoute.id < previousRoute.id;
 
   const animationProps = {
     className: styles.children,
     key: location.key,
-    initial: { y: shouldAnimateUp ? -1000 : 1000 },
-    animate: { y: 0 },
-    exit: { y: shouldAnimateUp ? 1000 : -1000 },
-    transition: { duration: 0.3 },
+    initial: { opacity: 0, filter: 'blur(50px)' },
+    animate: { opacity: 1, filter: 'blur(0px)' },
+    exit: { opacity: 0, filter: 'blur(50px)' },
+    transition: { duration: 0.5 },
   };
-
-  if (isTablet) {
-    animationProps.initial = { x: shouldAnimateUp ? -1500 : 1500 };
-    animationProps.animate = { x: 0 };
-    animationProps.exit = { x: shouldAnimateUp ? 1500 : -1500 };
-  }
 
   return (
     <main className={styles.container}>
@@ -63,7 +29,7 @@ const MainLayout = ({ children }) => {
         <AnimatePresence
           layout
           initial={false}
-          custom={shouldAnimateUp && location.pathname}
+          custom={location.pathname}
           mode="popLayout"
         >
           <motion.div {...animationProps} layout>

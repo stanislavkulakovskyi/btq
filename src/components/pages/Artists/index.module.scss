@@ -5,14 +5,14 @@
 .container {
   @extend %container;
 
-  background-color: $salt;
+  background: rgba($color: $salt, $alpha: 0.7);
+  min-height: 90vh;
 }
 
 .page {
   display: flex;
   max-width: 100%;
   flex-direction: column;
-  
 }
 
 .list {
@@ -28,7 +28,6 @@
 
   @include bp-tablet {
     column-gap: 40px;
-    // transform: translateY(0);
     justify-content: center;
   }
 }
@@ -48,4 +47,5 @@
 .bgIllustration {
   @extend %bgIllustration;
   z-index: 0;
+  animation: opacity 2s;
 }

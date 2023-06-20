@@ -60,8 +60,15 @@ const Artists = () => {
             })}
           </div>
         </div>
-
         <img src={bgText} alt="belletriq" className={styles.bgIllustration} />
+          {/* <motion.div
+            className={styles.background}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2 }}
+            // layout
+          ></motion.div> */}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/btq/static/css/main.abcd5590.css",
-    "main.js": "/btq/static/js/main.aaa02f44.js",
+    "main.css": "/btq/static/css/main.6b5d48b8.css",
+    "main.js": "/btq/static/js/main.62919aad.js",
     "static/media/bg.gif": "/btq/static/media/bg.360230b555498c743534.gif",
     "static/media/2.webp": "/btq/static/media/2.72128709d9b7027d7236.webp",
     "static/media/9.webp": "/btq/static/media/9.6f2326eaee92444e8895.webp",
@@ -48,18 +48,18 @@
     "index.html": "/btq/index.html",
     "static/media/play.svg": "/btq/static/media/play.0d5d0143ede45b95ea953b3a94cb3fb3.svg",
     "static/media/burger_corner.svg": "/btq/static/media/burger_corner.e581093a8f92a9b4f634fb2b8232a0e8.svg",
-    "static/media/ayokid_micro.webp": "/btq/static/media/ayokid_micro.e7434ba65276b76a8b24.webp",
-    "static/media/palmox_micro.webp": "/btq/static/media/palmox_micro.2c3aefffdfa9e56dd364.webp",
-    "static/media/pashaopen_micro.webp": "/btq/static/media/pashaopen_micro.c07c05e63446d3231fd5.webp",
-    "static/media/inodi_micro.webp": "/btq/static/media/inodi_micro.cf140f7b679a3d65f968.webp",
-    "static/media/cutmylips_micro.webp": "/btq/static/media/cutmylips_micro.f6570a7499750653b80e.webp",
+    "static/media/ayokid_micro.webp": "/btq/static/media/ayokid_micro.b2c820272ca83f0f2536.webp",
+    "static/media/palmox_micro.webp": "/btq/static/media/palmox_micro.6cf86a6ac68cc34f727c.webp",
+    "static/media/pashaopen_micro.webp": "/btq/static/media/pashaopen_micro.a47ad6d05c716a7b74b7.webp",
+    "static/media/inodi_micro.webp": "/btq/static/media/inodi_micro.db82f308214ada7e5a3d.webp",
+    "static/media/cutmylips_micro.webp": "/btq/static/media/cutmylips_micro.e1b7a2df503facec0bd2.webp",
     "static/media/plus.svg": "/btq/static/media/plus.f4c744e1e285511fa486b64536109021.svg",
-    "static/media/coldest_micro.webp": "/btq/static/media/coldest_micro.4bfe047a985d82326add.webp",
-    "main.abcd5590.css.map": "/btq/static/css/main.abcd5590.css.map",
-    "main.aaa02f44.js.map": "/btq/static/js/main.aaa02f44.js.map"
+    "static/media/coldest_micro.webp": "/btq/static/media/coldest_micro.28d6cbce75f09b0d4efd.webp",
+    "main.6b5d48b8.css.map": "/btq/static/css/main.6b5d48b8.css.map",
+    "main.62919aad.js.map": "/btq/static/js/main.62919aad.js.map"
   },
   "entrypoints": [
-    "static/css/main.abcd5590.css",
-    "static/js/main.aaa02f44.js"
+    "static/css/main.6b5d48b8.css",
+    "static/js/main.62919aad.js"
   ]
 }
