@@ -72,7 +72,7 @@ const Services = () => {
   };
 
   const isTablet = windowWidth <= 1366;
-  const isMobile = windowWidth <= 600;
+  const isMobile = windowWidth <= 640;
 
   return (
     <div className={styles.container}>
@@ -112,11 +112,7 @@ const Services = () => {
 
           <div className={styles.description_box}>
             <p className={styles.description}>
-              Belletriq create and deliver top-notch audio solutions for mixing,
-              mastering and production stages.
-              <br />
-              <br />
-              We provide services of sound identity, SFX, scoring, licensing &
+              Belletriq creates and delivers high quality audio solutions such as music production, mixing, mastering, SFX, sound identity and also scoring, licensing &
               sync.
             </p>
 

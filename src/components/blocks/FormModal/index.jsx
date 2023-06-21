@@ -1,140 +1,5 @@
-// import React from 'react';
-// import styles from './index.module.scss';
-// import close from '../../../assets/icons/close.svg';
-// import arrow from '../../../assets/icons/arrow.svg';
-
-// const FormModal = ({ onClose }) => {
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//   }
-
-//   return (
-//     <div className={styles.container}>
-//       <div>
-//         <div className={styles.form_box}>
-//           <div className={styles.form_backdrop} onClick={onClose}></div>
-//           <form
-//             action=""
-//             method="post"
-//             className={styles.form}
-//             onSubmit={handleSubmit}
-//           >
-//             <p className={styles.description}>
-//               If you'd like to request some services from our team, or if you
-//               have any questions, feel free to write us by filling out the form
-//               below.
-//             </p>
-//             <label htmlFor="mail" className={styles.label}>
-//               email to write you back:
-//             </label>
-//             <input
-//               type="email"
-//               name="email"
-//               id="mail"
-//               className={styles.email}
-//             />
-//             <label htmlFor="message" className={styles.label}>
-//               your message:
-//             </label>
-//             <textarea
-//               name="message"
-//               id="message"
-//               cols="30"
-//               rows="10"
-//               className={styles.message}
-//             ></textarea>
-//             <button className={styles.btn} type="submit">
-//               <img className={styles.arrow} src={arrow} alt="arrow" />
-//               SEND
-//             </button>
-//             <button className={styles.close_btn} onClick={onClose}>
-//               <img src={close} alt="close" />
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FormModal;
-
-// import React, { useState, useRef } from 'react';
-// import emailjs from '@emailjs/browser';
-
-// import styles from './index.module.scss';
-// import close from '../../../assets/icons/close.svg';
-// import arrow from '../../../assets/icons/arrow.svg';
-
-// const FormModal = ({ onClose }) => {
-//   const [email, setEmail] = useState('');
-//   const [message, setMessage] = useState('');
-//   const form = useRef();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     emailjs.sendForm('service_eje8f6a', 'template_epc5myn', form.current, 'igUREw9V0b_JLHZgH')
-//       .then((result) => {
-//           console.log(result.text);
-//       }, (error) => {
-//           console.log(error.text);
-//       });
-//   };
-
-//   return (
-//     <div className={styles.container}>
-//       <div>
-//         <div className={styles.form_box}>
-//           <div className={styles.form_backdrop} onClick={onClose}></div>
-//           <form className={styles.form} onSubmit={handleSubmit} ref={form}>
-//             <p className={styles.description}>
-//               If you'd like to request some services from our team, or if you
-//               have any questions, feel free to write us by filling out the form
-//               below.
-//             </p>
-//             <label htmlFor="mail" className={styles.label}>
-//               email to write you back:
-//             </label>
-//             <input
-//               type="email"
-//               name="from_email"
-//               id="mail"
-//               className={styles.email}
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//             />
-//             <label htmlFor="message" className={styles.label}>
-//               your message:
-//             </label>
-//             <textarea
-//               name="message"
-//               id="message"
-//               cols="30"
-//               rows="10"
-//               className={styles.message}
-//               value={message}
-//               onChange={(e) => setMessage(e.target.value)}
-//             ></textarea>
-//             <button className={styles.btn} type="submit">
-//               <img className={styles.arrow} src={arrow} alt="arrow" />
-//               SEND
-//             </button>
-//             <button className={styles.close_btn} onClick={onClose}>
-//               <img src={close} alt="close" />
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default FormModal;
-
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-// import emailjs from 'emailjs-com';
 
 import styles from './index.module.scss';
 import close from '../../../assets/icons/close.svg';
@@ -145,7 +10,7 @@ const FormModal = ({ onClose }) => {
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
-  const [isSucces, setIsSuccess] = useState(false);
+  const [isSucces, setIsSuccess] = useState(true);
   const form = useRef();
 
   const validateEmail = () => {
@@ -166,7 +31,7 @@ const FormModal = ({ onClose }) => {
   };
 
   const validateMessage = () => {
-    if (!message) {
+    if (!message.trim()) {
       setMessageError(`message can't be empty`);
       return false;
     }
@@ -188,7 +53,7 @@ const FormModal = ({ onClose }) => {
 
     setTimeout(() => {
       onClose();
-    }, 3000)
+    }, 5000);
 
     // try {
     //   await emailjs.sendForm('service_eje8f6a', 'template_epc5myn', form.current, 'igUREw9V0b_JLHZgH');
@@ -207,7 +72,11 @@ const FormModal = ({ onClose }) => {
       <div>
         <div className={styles.form_box}>
           <div className={styles.form_backdrop} onClick={onClose}></div>
-          <form className={styles.form} onSubmit={handleSubmit} ref={form}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            ref={form}
+          >
             <p className={styles.description}>
               If you'd like to request some services from our team, or if you
               have any questions, feel free to write us by filling out the form
@@ -220,12 +89,14 @@ const FormModal = ({ onClose }) => {
               {!emailError ? 'email to write you back:' : emailError}
             </label>
             <input
-              type="email"
+              type="text"
               name="from_email"
               id="mail"
+              autoComplete="true"
               className={`${styles.email} ${emailError && styles.error_input}`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="your email"
             />
             <label
               htmlFor="message"
@@ -245,6 +116,7 @@ const FormModal = ({ onClose }) => {
               }`}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              placeholder="message..."
             ></textarea>
             <button className={styles.btn} type="submit">
               <img className={styles.arrow} src={arrow} alt="arrow" />
@@ -257,7 +129,10 @@ const FormModal = ({ onClose }) => {
 
           {isSucces && (
             <div className={styles.success_message}>
-              <p>thanks for your message! we'll get back to you as soon as possible!</p>
+              <p>
+                thanks for your message! we'll get back to you as soon as
+                possible!
+              </p>
             </div>
           )}
         </div>

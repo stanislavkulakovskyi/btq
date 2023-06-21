@@ -13,7 +13,7 @@
 
 .backdrop {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@
   animation: opacityBlur 1s forwards;
 
   @include bp-mobile {
-    transform: translateY(-5%);
+    // transform: translateY(-5%);
   }
 }
 
@@ -71,5 +71,9 @@
 
   @include bp-tablet {
     right: -20px;
+  }
+
+  @include bp-mobile {
+    right: 0px;
   }
 }

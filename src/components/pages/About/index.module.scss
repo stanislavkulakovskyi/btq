@@ -4,7 +4,7 @@
 
 .container {
   @extend %container;
-  
+
   @include bp-custom-up(640px) {
     padding-left: 140px;
     justify-content: flex-start;
@@ -53,4 +53,16 @@
   height: 100%;
 
   pointer-events: none;
+}
+
+.line {
+  width: 2px;
+  height: 500px;
+  background: #000;
+  position: absolute;
+  left: 250px;
+
+  @include bp-tablet {
+    display: none;
+  }
 }

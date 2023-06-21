@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/btq/static/css/main.6b5d48b8.css",
-    "main.js": "/btq/static/js/main.62919aad.js",
+    "main.css": "/btq/static/css/main.2820914f.css",
+    "main.js": "/btq/static/js/main.99f644f2.js",
     "static/media/bg.gif": "/btq/static/media/bg.360230b555498c743534.gif",
     "static/media/2.webp": "/btq/static/media/2.72128709d9b7027d7236.webp",
     "static/media/9.webp": "/btq/static/media/9.6f2326eaee92444e8895.webp",
@@ -55,11 +55,11 @@
     "static/media/cutmylips_micro.webp": "/btq/static/media/cutmylips_micro.e1b7a2df503facec0bd2.webp",
     "static/media/plus.svg": "/btq/static/media/plus.f4c744e1e285511fa486b64536109021.svg",
     "static/media/coldest_micro.webp": "/btq/static/media/coldest_micro.28d6cbce75f09b0d4efd.webp",
-    "main.6b5d48b8.css.map": "/btq/static/css/main.6b5d48b8.css.map",
-    "main.62919aad.js.map": "/btq/static/js/main.62919aad.js.map"
+    "main.2820914f.css.map": "/btq/static/css/main.2820914f.css.map",
+    "main.99f644f2.js.map": "/btq/static/js/main.99f644f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b5d48b8.css",
-    "static/js/main.62919aad.js"
+    "static/css/main.2820914f.css",
+    "static/js/main.99f644f2.js"
   ]
 }

@@ -69,9 +69,10 @@ const Slider = ({ openModal }) => {
             onMouseLeave={handleMouseLeave}
           >
             <img
-              src={isImageLoaded ? slide.image : slide.microImage}
+              src={slide.image}
               alt="slide"
               className={styles.slide}
+              loading="lazy"
               onLoad={() => setIsImageLoaded(true)}
             />
             {(isHovered || isTablet) && (

@@ -13,9 +13,9 @@ const MainLayout = ({ children }) => {
   const animationProps = {
     className: styles.children,
     key: location.key,
-    initial: { opacity: 0, filter: 'blur(50px)' },
-    animate: { opacity: 1, filter: 'blur(0px)' },
-    exit: { opacity: 0, filter: 'blur(50px)' },
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
     transition: { duration: 0.5 },
   };
 
@@ -37,7 +37,7 @@ const MainLayout = ({ children }) => {
           </motion.div>
         </AnimatePresence>
       </section>
-      <Background />
+      {/* <Background /> */}
     </main>
   );
 };

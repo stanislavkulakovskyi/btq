@@ -4,8 +4,6 @@
 
 .container {
   @extend %container;
-  // max-width: 0%;
-  overflow-y: hidden;
 
   background: rgba($color: $salt, $alpha: 0.7);
 
@@ -124,9 +122,9 @@
 .description_box {
   max-width: 600px;
   background-color: $salt;
-  padding: 40px;
+  padding: 40px 20px;
   border-radius: 10px;
-  transform: translate(-25%, 170px);
+  transform: translate(-25%, 120px);
   z-index: 5;
   align-self: center;
   display: flex;
@@ -151,9 +149,6 @@
   }
 
   &:hover .svg_icon {
-    // width: 180px;
-    // background: $carbon;
-
     &:hover {
       background-color: $lava;
     }
@@ -177,7 +172,7 @@
   }
 
   @include bp-tablet {
-    width: 80%;
+    width: 90%;
     flex-direction: column;
     transform: translate(0, -80px);
     position: relative;
@@ -223,6 +218,10 @@
       transform: rotate(90deg) scale(0.6) translate(0px, 0px);
       transform-origin: center;
     }
+  }
+
+  &:hover {
+    border: 1px solid transparent;
   }
 
   @include bp-tablet {

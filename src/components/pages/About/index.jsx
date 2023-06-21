@@ -1,18 +1,18 @@
 import styles from './index.module.scss';
 
 const About = () => {
-
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <h2 className={styles.title}>belletriq</h2>
         <p className={styles.description}>
-          We are the Ukrainian based artistic community which unites likeminded
-          people from all over the world. Belletriq produce, release music and
-          high-quality sound FX.
+          We are the Ukrainian creative community which unites likeminded people
+          and promotes cultural development in it’s own way. Mostly focused on
+          sound, but featured in a vast variety of art forms.
         </p>
       </div>
+      
+      <div className={styles.line}></div>
     </div>
   );
 };
