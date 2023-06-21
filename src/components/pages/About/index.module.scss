@@ -56,13 +56,5 @@
 }
 
 .line {
-  width: 2px;
-  height: 500px;
-  background: #000;
-  position: absolute;
-  left: 250px;
-
-  @include bp-tablet {
-    display: none;
-  }
+  @extend %line; 
 }

@@ -122,3 +122,19 @@
   // z-index: 20;
   position: absolute;
 }
+
+.roles {
+  position: absolute;
+  color: $salt;
+  @include font-orditron-400;
+  font-size: 1.6rem;
+  left: 50%;
+  top: 77%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+
+  background: #00000055;
+  padding: 10px;
+
+  z-index: 50;
+}

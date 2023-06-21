@@ -1,5 +1,3 @@
-
-
 const artists = [
   {
     name: 'Cutmylips',

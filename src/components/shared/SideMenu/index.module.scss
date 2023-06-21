@@ -14,6 +14,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: #8b8b8b00;
+    z-index: 100;
   }
 
   @include bp-desktop {

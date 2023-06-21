@@ -67,6 +67,8 @@ const Music = () => {
           </a>
         </div>
       </div>
+
+      <div className={styles.line}></div>
     </div>
   );
 };

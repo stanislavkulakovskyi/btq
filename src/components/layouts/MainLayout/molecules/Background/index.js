@@ -28,7 +28,7 @@ const Background = () => {
   return (
     <div className={styles.container}>
 
-      <img src={bgDummy} alt="background" className={styles.animation} onLoad={() => setIsBgLoaded(true)} />
+      <img src={isBgLoaded ? bg : bgDummy} alt="background" className={styles.animation} onLoad={() => setIsBgLoaded(true)} />
 
       <div className={styles.blur} />
 

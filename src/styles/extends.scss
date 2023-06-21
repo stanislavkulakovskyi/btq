@@ -69,6 +69,20 @@
   }
 }
 
+%line {
+  width: 2px;
+  height: 500px;
+  background: #000;
+  position: fixed;
+  left: 300px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include bp-tablet {
+    display: none;
+  }
+}
+
 %swipeAnimation {
   @keyframes swipe {
     0% {

@@ -18,6 +18,7 @@ const Slider = ({ openModal }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+
   const handleResize = useCallback(() => {
     setWindowWidth(window.innerWidth);
   }, []);
@@ -58,8 +59,11 @@ const Slider = ({ openModal }) => {
           nextEl: `.${styles.btn_next}`,
         }}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
+        // speed="2000"
         className={styles.swiper}
         loop={true}
+        // cssMode="true"
+        style={{transition: 'all 12s linear'}}
       >
         {thumbs.map((slide) => (
           <SwiperSlide
@@ -69,12 +73,14 @@ const Slider = ({ openModal }) => {
             onMouseLeave={handleMouseLeave}
           >
             <img
+              onLoad={() => setIsImageLoaded(true)}
               src={slide.image}
               alt="slide"
               className={styles.slide}
-              loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
             />
+
+            <p className={styles.roles}>[ {slide.roles} ]</p>
+
             {(isHovered || isTablet) && (
               <button
                 className={styles.playButton}

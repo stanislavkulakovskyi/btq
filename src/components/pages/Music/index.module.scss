@@ -78,3 +78,7 @@
     filter: brightness(0.9);
   }
 }
+
+.line {
+  @extend %line; 
+}

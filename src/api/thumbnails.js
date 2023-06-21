@@ -29,41 +29,41 @@ import microThumb13 from '../assets/images/vid_thumbnails/13_micro.webp';
 import microThumb14 from '../assets/images/vid_thumbnails/14_micro.webp';
 
 const thumbs = [
-  {id: 1, image: thumb1, videoUrl: 'https://www.youtube.com/embed/6b1CfRII7wA?autoplay=1', microImage: microThumb1},
+  {id: 1, image: thumb1, videoUrl: 'https://www.youtube.com/embed/6b1CfRII7wA?autoplay=1', microImage: microThumb1, roles: 'music + sfx'},
 
   {id: 2, image: thumb2, videoUrl: 'https://www.youtube.com/embed/gJjLlR-2CNI?autoplay=1', 
-  microImage: microThumb2},
+  microImage: microThumb2, roles: 'music + sfx'},
 
   {id: 3, image: thumb3, videoUrl: 'https://www.youtube.com/embed/wvJo2_537F8?autoplay=1', 
-  microImage: microThumb3},
+  microImage: microThumb3, roles: 'music + sfx'},
 
   {id: 4, image: thumb4, videoUrl: 'https://www.youtube.com/embed/krkxCvpT7E0?autoplay=1', 
-  microImage: microThumb4},
+  microImage: microThumb4, roles: 'music + sfx'},
 
   {id: 5, image: thumb5, videoUrl: 'https://www.youtube.com/embed/JoRU3FNi15U?autoplay=1', 
-  microImage: microThumb5},
+  microImage: microThumb5, roles: 'music + sfx'},
 
   {id: 6, image: thumb6, videoUrl: 'https://www.youtube.com/embed/sjEjwjyUErY?autoplay=1', 
-  microImage: microThumb6},
+  microImage: microThumb6, roles: 'music + sfx'},
 
   {id: 7, image: thumb7, videoUrl: 'https://www.youtube.com/embed/X600b-SzG80?autoplay=1', 
-  microImage: microThumb7},
+  microImage: microThumb7, roles: 'music + sfx'},
 
   {id: 8, image: thumb8, videoUrl: 'https://www.youtube.com/embed/otWFdo5Bz_Y?autoplay=1', 
-  microImage: microThumb8},
+  microImage: microThumb8, roles: 'music + sfx'},
 
   {id: 9, image: thumb9, videoUrl: 'https://www.youtube.com/embed/2TsVwLv1Dm4?autoplay=1', 
-  microImage: microThumb9},
+  microImage: microThumb9, roles: 'music + sfx'},
 
-  {id: 10, image: thumb10, videoUrl: 'https://www.youtube.com/embed/46mndakk_8s?autoplay=1', microImage: microThumb10},
+  {id: 10, image: thumb10, videoUrl: 'https://www.youtube.com/embed/46mndakk_8s?autoplay=1', microImage: microThumb10, roles: 'music + sfx'},
 
-  {id: 11, image: thumb11, videoUrl: 'https://www.youtube.com/embed/hQCC3NPPXjk?autoplay=1', microImage: microThumb11},
+  {id: 11, image: thumb11, videoUrl: 'https://www.youtube.com/embed/hQCC3NPPXjk?autoplay=1', microImage: microThumb11, roles: 'music + sfx'},
 
-  {id: 12, image: thumb12, videoUrl: 'https://www.youtube.com/embed/0l9tI1b5zS0?autoplay=1', microImage: microThumb12},
+  {id: 12, image: thumb12, videoUrl: 'https://www.youtube.com/embed/0l9tI1b5zS0?autoplay=1', microImage: microThumb12, roles: 'music + sfx'},
 
-  {id: 13, image: thumb13, videoUrl: 'https://www.youtube.com/embed/PLSOiOCyUjM?autoplay=1', microImage: microThumb13},
+  {id: 13, image: thumb13, videoUrl: 'https://www.youtube.com/embed/PLSOiOCyUjM?autoplay=1', microImage: microThumb13, roles: 'music + sfx'},
 
-  {id: 14, image: thumb14, videoUrl: 'https://www.youtube.com/embed/3kjgG_YHF90?autoplay=1', microImage: microThumb14},
+  {id: 14, image: thumb14, videoUrl: 'https://www.youtube.com/embed/3kjgG_YHF90?autoplay=1', microImage: microThumb14, roles: 'music + sfx'},
 ];
 
 export default thumbs;

@@ -10,7 +10,7 @@ const FormModal = ({ onClose }) => {
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
   const [messageError, setMessageError] = useState('');
-  const [isSucces, setIsSuccess] = useState(true);
+  const [isSucces, setIsSuccess] = useState(false);
   const form = useRef();
 
   const validateEmail = () => {

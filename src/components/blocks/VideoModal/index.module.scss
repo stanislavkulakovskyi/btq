@@ -34,6 +34,7 @@
   max-height: 100%;
   position: relative;
   height: 50%;
+  animation: scale 0.3s;
 
   @include bp-mobile {
     height: 40%;

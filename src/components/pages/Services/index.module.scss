@@ -178,10 +178,6 @@
     position: relative;
   }
 
-  @include bp-custom-down(600px) {
-    transform: translate(0, 0);
-  }
-
   @include bp-mobile {
     background-color: $carbon;
     color: $salt;
