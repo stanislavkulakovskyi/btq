@@ -137,4 +137,9 @@
   padding: 10px;
 
   z-index: 50;
+
+  @include bp-mobile {
+    font-size: 1.3rem;
+    top: 85%;
+  }
 }

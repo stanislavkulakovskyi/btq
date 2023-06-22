@@ -38,6 +38,9 @@ const MainLayout = ({ children }) => {
         </AnimatePresence>
       </section>
       <Background />
+
+      <div className={styles.line1}></div>
+      <div className={styles.line2}></div>
     </main>
   );
 };

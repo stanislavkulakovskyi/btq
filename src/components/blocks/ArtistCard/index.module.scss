@@ -10,8 +10,6 @@
   width: 100%;
   border-radius: 10px;
 
-  // box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.205);
-
   position: relative;
 
   @include bp-desktop {
@@ -124,10 +122,9 @@
 .link_icon {
   @include square(40px);
   @extend %transition03;
-  filter: brightness(0.8);
 
   &:hover {
-    filter: brightness(1);
+    transform: scale(1.1)
   }
 }
 

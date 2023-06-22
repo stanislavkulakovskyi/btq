@@ -68,9 +68,9 @@ const thumbs = [
 
   {id: 14, image: thumb14, videoUrl: 'https://www.youtube.com/embed/3kjgG_YHF90?autoplay=1', microImage: microThumb14, roles: 'music + sfx', name: 'studdymo'},
 
-  {id: 15, image: thumb15, videoUrl: 'https://www.youtube.com/embed/B66TABG7GQg', roles: 'music + sfx', name: 'poltrona'},
+  {id: 15, image: thumb15, videoUrl: 'https://www.youtube.com/embed/B66TABG7GQg?autoplay=1', roles: 'music + sfx', name: 'poltrona'},
 
-  {id: 16, image: thumb16, videoUrl: 'https://www.youtube.com/embed/oywZzXorGHs', roles: 'sfx', name: 'have-a-rest'}
+  {id: 16, image: thumb16, videoUrl: 'https://www.youtube.com/embed/oywZzXorGHs?autoplay=1', roles: 'sfx', name: 'have-a-rest'}
 ];
 
 export default thumbs;

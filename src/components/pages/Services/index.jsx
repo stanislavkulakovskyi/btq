@@ -26,6 +26,12 @@ const Services = () => {
   
   const handleFormOpen = () => {
     setIsFormOpened(true);
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   const handleFormClose = () => {
@@ -87,7 +93,7 @@ const Services = () => {
           ))}
         </p>
 
-        <div className={styles.slider_container}>
+        <div className={styles.slider_container}> 
           <div
             className={styles.slider_box}
             style={{ clipPath: !isMobile ? 'url(#mask)' : null }}
@@ -99,6 +105,7 @@ const Services = () => {
                 clipPathUnits="objectBoundingBox"
                 transform={`scale(${isTablet ? '0.0009' : '0.00074'}, 0.0023)`}
                 height="0"
+                
               >
                 <path
                   d="M0,400V.05C274.82,36.84,865.29,36.83,1140,0V400C865.29,363.18,274.83,363.16,0,400Z"
@@ -112,8 +119,8 @@ const Services = () => {
 
           <div className={styles.description_box}>
             <p className={styles.description}>
-              Belletriq creates and delivers high quality audio solutions such as music production, mixing, mastering, SFX, sound identity and also scoring, licensing &
-              sync.
+              Belletriq creates and delivers high quality audio solutions such as music production, mixing, mastering, scoring, SFX and also we provide licensing &
+              sync services.
             </p>
 
             <button className={styles.link} onClick={handleFormOpen}>

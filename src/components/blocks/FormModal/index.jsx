@@ -53,7 +53,7 @@ const FormModal = ({ onClose }) => {
 
     setTimeout(() => {
       onClose();
-    }, 5000);
+    }, 4000);
 
     // try {
     //   await emailjs.sendForm('service_eje8f6a', 'template_epc5myn', form.current, 'igUREw9V0b_JLHZgH');
@@ -95,7 +95,10 @@ const FormModal = ({ onClose }) => {
               autoComplete="true"
               className={`${styles.email} ${emailError && styles.error_input}`}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value)
+                setEmailError(false)
+              }}
               placeholder="your email"
             />
             <label
@@ -115,7 +118,10 @@ const FormModal = ({ onClose }) => {
                 messageError && styles.error_input
               }`}
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => {
+                setMessage(e.target.value)
+                setMessageError(false)
+              }}
               placeholder="message..."
             ></textarea>
             <button className={styles.btn} type="submit">
