@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/btq/static/css/main.44b0b2ab.css",
-    "main.js": "/btq/static/js/main.2559567d.js",
+    "main.css": "/btq/static/css/main.840fbc01.css",
+    "main.js": "/btq/static/js/main.046ba4c6.js",
     "static/media/bg.gif": "/btq/static/media/bg.360230b555498c743534.gif",
     "static/media/Player vidget.gif": "/btq/static/media/Player vidget.5b554971bf2739812097.gif",
     "static/media/palmox.webp": "/btq/static/media/palmox.a91cd942730b00524fcf.webp",
@@ -57,11 +57,11 @@
     "static/media/cutmylips_micro.webp": "/btq/static/media/cutmylips_micro.e1b7a2df503facec0bd2.webp",
     "static/media/plus.svg": "/btq/static/media/plus.f4c744e1e285511fa486b64536109021.svg",
     "static/media/coldest_micro.webp": "/btq/static/media/coldest_micro.28d6cbce75f09b0d4efd.webp",
-    "main.44b0b2ab.css.map": "/btq/static/css/main.44b0b2ab.css.map",
-    "main.2559567d.js.map": "/btq/static/js/main.2559567d.js.map"
+    "main.840fbc01.css.map": "/btq/static/css/main.840fbc01.css.map",
+    "main.046ba4c6.js.map": "/btq/static/js/main.046ba4c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.44b0b2ab.css",
-    "static/js/main.2559567d.js"
+    "static/css/main.840fbc01.css",
+    "static/js/main.046ba4c6.js"
   ]
 }
